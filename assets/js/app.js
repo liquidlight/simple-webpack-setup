@@ -1,1 +1,3 @@
-const app = document.querySelector('#app');
+
+require('./modules/one');
+require('./modules/three');
