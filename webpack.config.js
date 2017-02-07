@@ -1,4 +1,7 @@
-webpackConfig = {
+const webpack = require('webpack');
+const path = require('path');
+
+const config = {
 	cache: true,
 	entry: {
 		app: "./assets/js/app.js"
@@ -9,8 +12,14 @@ webpackConfig = {
 	module: {
 		rules: [
 			{
-				exclude: /(node_modules)/,
-				loader: 'babel'
+				test: /\.js$/,
+				include: path.resolve(__dirname, 'assets/js'),
+				use: [{
+					loader: 'babel-loader',
+					options: {
+						presets: ['es2015']
+					}
+				}]
 			}
 		]
 	},
@@ -20,4 +29,4 @@ webpackConfig = {
 	plugins: [],
 };
 
-module.exports = webpackConfig;
+module.exports = config;

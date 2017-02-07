@@ -1,6 +1,6 @@
 'use strict';
 
-const two = require('./two');
+import two from './two';
 
 const One = (function(two){
 	console.log('Module 1');

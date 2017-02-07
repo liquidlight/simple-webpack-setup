@@ -1,3 +1,3 @@
 
-require('./modules/one');
-require('./modules/three');
+import './modules/one';
+import './modules/three';

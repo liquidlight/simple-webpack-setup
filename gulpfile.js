@@ -2,22 +2,23 @@
 
 var gulp = require("gulp"),
 	gutil = require("gulp-util"),
-	webpack = require('webpack'),
+	webpack2 = require('webpack'),
 	webpackStream = require('webpack-stream'),
-	webpackConfig = require("./webpack.config.js");
+	config = require("./webpack.config.js");
 
 /* Webpack Dev Config */
-var devConfig = Object.create(webpackConfig);
+var devConfig = Object.create(config);
 	devConfig.devtool = "sourcemap";
-	devConfig.debug = true;
 	devConfig.watch = true;
 
 /* Webpack Production Config */
-var productionConfig = Object.create(webpackConfig);
+var productionConfig = Object.create(config);
+
+console.log(devConfig);
 
 /* Scripts compiler */
 gulp.task('default', function(e) {
 	return gulp.src('app.js')
-		.pipe( gutil.env.dev ? webpackStream( devConfig ) : webpackStream( productionConfig ) )
+		.pipe( gutil.env.dev ? webpackStream( devConfig, webpack2 ) : webpackStream( productionConfig, webpack2 ) )
 		.pipe( gulp.dest('dist/js/') );
 });
