@@ -4,7 +4,8 @@ const path = require('path');
 const config = {
 	cache: true,
 	entry: {
-		app: "./assets/js/app.js"
+		test: "./assets/js/test.js",
+		app: "./assets/js/app.js",
 	},
 	output: {
 		filename: "[name].bundle.js",
@@ -24,7 +25,10 @@ const config = {
 		]
 	},
 	resolve: {
-		modules: ["node_modules"]
+		modules: ["node_modules"],
+		alias: {
+			'vue$': 'vue/dist/vue.common.js'
+		}
 	},
 	plugins: [],
 };
