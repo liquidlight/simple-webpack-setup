@@ -1,14 +1,18 @@
 {
-  "name": "Webpack 2 + VueJs",
+  "name": "Webpack2 boilerplate",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple Webpack setup to build Vue apps.",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp",
     "build": "gulp --production"
   },
-  "keywords": ["webpack", "vue", "gulp"],
+  "keywords": [
+    "webpack",
+    "vue",
+    "gulp"
+  ],
   "author": "João Augusto <joao@liquidlight.co.uk>",
   "license": "ISC",
   "devDependencies": {
