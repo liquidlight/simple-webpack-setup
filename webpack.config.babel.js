@@ -29,8 +29,7 @@ const config = {
 		alias: {
 			'vue$': 'vue/dist/vue.common.js'
 		}
-	},
-	plugins: [],
+	}
 };
 
 module.exports = config;
