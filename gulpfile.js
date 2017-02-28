@@ -1,30 +1,24 @@
-/**
- *
- * Consider replace gutil with chalk (https://www.npmjs.com/package/chalk)
- *
- */
-
-
 'use strict';
 
 var gulp          = require("gulp"),
 	gutil         = require("gulp-util"),
+	Config 		  = require("./build/conf"),
 	webpack       = require('webpack'),
 	webpackStream = require('webpack-stream'),
 	gutil         = require('gulp-util');
 
-process.env.production = false;
-if( gutil.env.production ) {
-	var config = require("./build/webpack.prod.js");
-	process.env.production = true;
-	gutil.log( gutil.colors.yellow('\n\nBuilding for production... \n'));
-} else {
-	var config = require("./build/webpack.dev.js");
+// Defaults to Development enviroment
+process.env.NODE_ENV = 'development';
+// Change enviroment variable if passed --production flag
+if ( gutil.env.production ) {
+	process.env.NODE_ENV = 'production';
 }
 
-/* Scripts compiler */
+// Get configuration files for enviroment
+var env = new Config();
+
 gulp.task('default', function(e) {
 	return gulp.src('app.js')
-		.pipe( webpackStream(config, webpack) )
+		.pipe( webpackStream(env, webpack) )
 		.pipe( gulp.dest('dist/js/') );
 });
