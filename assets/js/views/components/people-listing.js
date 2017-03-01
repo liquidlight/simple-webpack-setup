@@ -1,10 +1,12 @@
 import Vue from 'vue';
 
-Vue.component('people-listing', {
-    template: '#people-listing-template',
-    data: function() {
-        return {
-            people: this.$parent.people
-        }
-    }
+let PeopleListing = Vue.extend({
+	template: '#people-listing-template',
+		data: function() {
+		return {
+			people: this.$parent.people
+		}
+	}
 });
+
+export default PeopleListing;
