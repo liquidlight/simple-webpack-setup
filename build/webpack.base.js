@@ -4,8 +4,8 @@ const path = require('path'),
 const baseWebpackConfig = {
 	cache: true,
 	entry: {
-		test: "./assets/js/test.js",
-		app: "./assets/js/app.js",
+		test: "./src/js/test.js",
+		app: "./src/js/app.js",
 	},
 	output: {
 		filename: "[name].bundle.js",
@@ -14,7 +14,7 @@ const baseWebpackConfig = {
 		rules: [
 			{
 				test: /\.js$/,
-				include: path.resolve(__dirname, 'assets/js'),
+				include: path.resolve(__dirname, 'src/js'),
 				exclude: [/node_modules/],
 				use: [{
 					loader: 'babel-loader',
