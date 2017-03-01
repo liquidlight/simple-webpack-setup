@@ -1,8 +1,16 @@
 {
-  "name": "Webpack2 boilerplate",
+  "name": "simple-webpack-setup",
   "version": "1.0.0",
   "description": "A simple Webpack setup to build Vue apps.",
   "main": "gulpfile.js",
+  "homepage": "https://github.com/liquidlight/simple-webpack-setup#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/liquidlight/simple-webpack-setup.git"
+  },
+  "bugs": {
+    "url": "https://github.com/liquidlight/simple-webpack-setup/issues"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp",
