@@ -1,14 +1,14 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import PeopleListing from './views/components/people-listing';
-import PersonDetail from './views/components/people-detail';
+var Vue           = require('vue'),
+	VueRouter     = require('vue-router'),
+	PersonDetail  = require("./views/components/people-detail"),
+	PeopleListing = require('./views/components/people-listing');
 
 // This installs <router-view> and <router-link>
 // See guidance here
 // https://github.com/vuejs/vue-router/blob/dev/examples/basic/app.js
 Vue.use(VueRouter);
 
-const router = new VueRouter({
+var router = new VueRouter({
 	mode: 'hash',
 	base: window.location.href,
 	routes: [
@@ -17,7 +17,7 @@ const router = new VueRouter({
 	]
 });
 
-let vm = new Vue({
+var vm = new Vue({
 	el: '#app',
 	router,
 	data: {

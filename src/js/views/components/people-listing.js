@@ -1,6 +1,6 @@
-import Vue from 'vue';
+var Vue = require('vue');
 
-let PeopleListing = Vue.extend({
+var PeopleListing = Vue.extend({
 	template: '#people-listing-template',
 		data: function() {
 		return {
@@ -9,4 +9,4 @@ let PeopleListing = Vue.extend({
 	}
 });
 
-export default PeopleListing;
+module.exports = PeopleListing;
