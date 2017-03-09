@@ -1,6 +1,7 @@
 var Vue = require('vue');
 
-var PersonDetail = Vue.extend({
+
+module.exports = Vue.extend({
 	template: '#people-detail-template',
 	data: function() {
 		var person;
@@ -16,5 +17,3 @@ var PersonDetail = Vue.extend({
 		}
 	}
 });
-
-module.exports = PersonDetail;

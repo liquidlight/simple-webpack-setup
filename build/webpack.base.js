@@ -1,37 +1,30 @@
-const path = require('path'), 
-	  webpack = require('webpack');
+var webpack = require('webpack'),
+	path    = require('path');
 
-const baseWebpackConfig = {
+var srcPath  = path.join(__dirname, '/../src/js'),
+	distPath = path.join(__dirname, '/../dist/js');
+
+var baseWebpackConfig = {
 	cache: true,
+	context: srcPath,
 	entry: {
-		test: "./src/js/test.js",
-		app: "./src/js/app.js",
+		app: './app.js',
 	},
 	output: {
-		filename: "[name].bundle.js",
-	},
-	module: {
-		rules: [
-			{
-				test: /\.js$/,
-				include: path.resolve(__dirname, 'src/js'),
-				exclude: [/node_modules/],
-				use: [{
-					loader: 'babel-loader',
-					options: {
-						presets: ['es2015']
-					}
-				}]
-			}
-		]
-	},
+		path: distPath,
+		filename: '[name].bundle.js',
+    },
 	resolve: {
 		modules: ["node_modules"],
 		alias: {
-			'vue$': 'vue/dist/vue.esm.js'
+			vue: 'vue/dist/vue.common.js',
+			'vue-router': 'vue-router/dist/vue-router.common.js'
 		}
 	},
 	plugins: [
+		new webpack.EnvironmentPlugin({
+			NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+		}),
 		new webpack.DefinePlugin({
 			'process.env': {
 				NODE_ENV: JSON.stringify(process.env.NODE_ENV)
