@@ -13,9 +13,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp",
-    "build": "gulp --production",
-    "webpack": "webpack"
+    "dev": "gulp",
+    "build": "gulp --production"
   },
   "keywords": [
     "webpack",
