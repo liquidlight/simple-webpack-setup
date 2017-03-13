@@ -5,7 +5,6 @@ var path = require('path'),
 	FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 
 module.exports = merge(baseWebpackConfig, {
-	watch: true,
 	plugins: [
 		new webpack.NoEmitOnErrorsPlugin(),
 		new FriendlyErrorsPlugin(),

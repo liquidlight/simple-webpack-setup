@@ -4,7 +4,7 @@ var webpack = require('webpack'),
 var srcPath  = path.join(__dirname, '/../src/js'),
 	distPath = path.join(__dirname, '/../dist/js');
 
-var baseWebpackConfig = {
+module.exports = {
 	cache: true,
 	context: srcPath,
 	entry: {
@@ -32,5 +32,3 @@ var baseWebpackConfig = {
 		})
 	]
 };
-
-module.exports = baseWebpackConfig;
