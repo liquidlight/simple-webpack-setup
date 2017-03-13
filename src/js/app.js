@@ -1,7 +1,7 @@
 var Vue           = require('vue'),
 	VueRouter     = require('vue-router'),
-	PersonDetail  = require("./views/components/people-detail"),
-	PeopleListing = require('./views/components/people-listing');
+	PersonDetail  = require("./views/people-detail"),
+	PeopleListing = require('./views/people-listing');
 
 // This installs <router-view> and <router-link>
 // See guidance here
