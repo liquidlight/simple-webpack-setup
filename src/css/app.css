@@ -1,0 +1,77 @@
+:root {
+	--primary: #0366d6;
+	--gutterSmall: .5rem;
+	--gutter: 1rem;
+	--gutterLarge: 2rem;
+	--corners: .3rem;
+
+	--baseColour: #34495e;
+	--linkColour: #2980b9;
+	--linkVisited: #34495e;
+}
+
+body {
+	background-color: #eaeff2;
+	margin: var(--gutter);
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: var(--baseColour);
+	line-height: 1.5;
+}
+
+a {
+	position: relative;
+	color: var(--linkColour);
+	text-decoration: none;
+}
+
+a:hover::before {
+	visibility: visible;
+}
+
+a::before {
+	content: "";
+	border-bottom: 1px dotted var(--linkColour);
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	visibility: hidden;
+}
+
+.app__container {
+	background: white;
+	padding: var(--gutterLarge);
+	border-radius: var(--corners);
+	max-width: 60rem;
+	margin: 0 auto;
+}
+
+.people-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.person__item {
+	position: relative;
+	line-height: 2;
+}
+
+.person__item::before {
+	content: "•";
+	position: absolute;
+	left: -1rem;
+	transition: .2s ease;
+	opacity: 0;
+	transform: translateX(-.5rem);
+}
+
+.person__item:hover::before {
+	transform: none;
+	opacity: 1;
+}
+
+.person__name {
+	display: inline-block;
+	min-width: 10rem;
+	line-height: 1.6;
+}
