@@ -13,6 +13,14 @@ module.exports = merge(baseWebpackConfig, {
 			minimize: true,
 			debug: false
 		}),
-		// new webpack.optimize.UglifyJsPlugin()
+		new webpack.optimize.UglifyJsPlugin({
+			sourceMap: true,
+			compress: {
+				warnings: false
+			},
+			output: {
+				comments: false
+			}
+		})
 	]
 });
