@@ -1,4 +1,4 @@
-var Vue           = require('vue'),
+var	Vue           = require('vue'),
 	VueRouter     = require('vue-router'),
 	PersonDetail  = require("./views/people-detail"),
 	PeopleListing = require('./views/people-listing');

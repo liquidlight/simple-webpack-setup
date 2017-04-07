@@ -1,6 +1,6 @@
 var Vue = require('vue');
 
-module.exports = Vue.extend({
+var PeopleDetail = Vue.extend({
 	template: '#people-detail-template',
 	data: function() {
 		var person;
@@ -16,3 +16,5 @@ module.exports = Vue.extend({
 		}
 	}
 });
+
+module.exports = PeopleListing;
