@@ -4,8 +4,7 @@ var gulp          = require("gulp"),
 	gutil         = require("gulp-util"),
 	Config 		  = require("./build/conf"),
 	webpack       = require('webpack'),
-	webpackStream = require('webpack-stream'),
-	gutil         = require('gulp-util');
+	webpackStream = require('webpack-stream');
 
 // Defaults to Development enviroment
 process.env.NODE_ENV = 'development';
