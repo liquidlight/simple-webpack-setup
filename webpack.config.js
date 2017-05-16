@@ -1,18 +1,37 @@
-var gutil = require('gulp-util');
+var webpack = require('webpack'),
+	path = require('path'),
+    FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 
-module.exports = function(){
-	switch(process.env.NODE_ENV) {
-		case 'development':
-			return require("./build/webpack.dev.js");;
+var srcPath  = path.join(__dirname, '/src/js'),
+	distPath = path.join(__dirname, '/dist/js');
 
-		case 'production':
-			return require("./build/webpack.prod.js");
-
-		default:
-			gutil.log(gutil.colors.yellow('\n\nNODE_ENV not defined.\n'),
-				    gutil.colors.cyan('Building for production... \n'));
-
-			process.env.NODE_ENV = 'production';
-			return require("./build/webpack.prod.js");
-	}
+module.exports = {
+	watch: true,
+	cache: true,
+	devtool: '#cheap-module-eval-source-map',
+	context: srcPath,
+	entry: {
+		app: './app.js',
+	},
+	output: {
+		path: distPath,
+		filename: '[name].bundle.js',
+    },
+	resolve: {
+		modules: ["node_modules"],
+	},
+	module: {
+		rules: [{
+				test: /\.js$/,
+				exclude: [/node_modules/],
+				use: [{
+					loader: 'babel-loader',
+					options: { presets: ['es2015'] },
+				}]
+		}],
+	},
+	plugins: [
+		new webpack.NoEmitOnErrorsPlugin(),
+		new FriendlyErrorsPlugin()
+	]
 };
