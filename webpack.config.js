@@ -1,6 +1,6 @@
 var webpack = require('webpack'),
 	path = require('path'),
-    FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
+	FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 
 var srcPath  = path.join(__dirname, '/src/js'),
 	distPath = path.join(__dirname, '/dist/js');
@@ -16,7 +16,7 @@ module.exports = {
 	output: {
 		path: distPath,
 		filename: '[name].bundle.js',
-    },
+	},
 	resolve: {
 		modules: ["node_modules"],
 	},
