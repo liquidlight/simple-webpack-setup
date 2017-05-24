@@ -1,6 +1,5 @@
 var webpack = require('webpack'),
-	path = require('path'),
-    FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
+	path = require('path');
 
 var srcPath  = path.join(__dirname, '/src/js'),
 	distPath = path.join(__dirname, '/dist/js');
@@ -16,22 +15,11 @@ module.exports = {
 	output: {
 		path: distPath,
 		filename: '[name].bundle.js',
-    },
+	},
 	resolve: {
 		modules: ["node_modules"],
 	},
-	module: {
-		rules: [{
-				test: /\.js$/,
-				exclude: [/node_modules/],
-				use: [{
-					loader: 'babel-loader',
-					options: { presets: ['es2015'] },
-				}]
-		}],
-	},
 	plugins: [
-		new webpack.NoEmitOnErrorsPlugin(),
-		new FriendlyErrorsPlugin()
+		new webpack.NoEmitOnErrorsPlugin()
 	]
 };

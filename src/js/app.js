@@ -1,5 +1,5 @@
 'use strict';
 
-import './modules/foo';
-import './modules/bar';
-import './modules/baz';
+var foo = require('./modules/foo'),
+	bar = require('./modules/bar'),
+	baz = require('./modules/baz');

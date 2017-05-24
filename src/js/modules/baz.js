@@ -1,9 +1,9 @@
 'use strict';
 
-let baz = (function(){
+var baz = (function(){
 	
 	console.log('Baz!');
 
 })();
 
-export default baz;
+module.exports = baz;

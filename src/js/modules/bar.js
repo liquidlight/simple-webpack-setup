@@ -1,9 +1,9 @@
 'use strict';
 
-let bar = (function() {
+var bar = (function() {
 	
 	console.log('Bar!');
 	
 })();
 
-export default bar;
+module.exports = bar;
