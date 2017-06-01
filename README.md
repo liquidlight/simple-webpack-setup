@@ -1,25 +1,11 @@
-# Webpack 2 + Vue 2.0
+# Getting started with Webpack 2
 
-Simple webpack setup for Vue js apps.
+This branch is part of a [blog post](https://www.liquidlight.co.uk/blog/article/getting-started-with-webpack-2/) project written for [Liquid Light](https://www.liquidlight.co.uk/). It explains step by step how to integrate Webpack with Gulp.
 
-To start:
+For simplicity we use CommonJS on the Javascript modules examples.
 
-```
-$ npm install
-```
-
-To develop:
+To get started, clone the repo to your local machine and run:
 
 ```
-$ npm run dev
-# or
-$ gulp
-```
-
-To build for production:
-
-```
-$ npm run build
-# or
-$ gulp --production
+$ npm install; gulp
 ```
