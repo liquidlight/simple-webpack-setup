@@ -38,7 +38,7 @@ module.exports = {
 		  loader: 'vue-loader',
 		  options: {
 		    loaders: {
-		      scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
+		      scss: 'vue-style-loader!css-loader!sass-loader',
 		    }
 		  }
 		}
