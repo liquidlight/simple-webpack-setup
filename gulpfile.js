@@ -1,14 +1,14 @@
 'use strict';
 
-var gulp          = require("gulp"),
-	gutil         = require("gulp-util"),
-	Config 		  = require("./build/conf"),
-	webpack       = require('webpack'),
+var gulp = require("gulp"),
+	gutil = require("gulp-util"),
+	Config = require("./build/conf"),
+	webpack = require('webpack'),
 	webpackStream = require('webpack-stream');
 
-// Defaults to Development enviroment
+// Defaults to development enviroment
 process.env.NODE_ENV = 'development';
-// Change enviroment variable if passed --production flag
+// Allow pass the --production flag
 if ( gutil.env.production ) {
 	process.env.NODE_ENV = 'production';
 }

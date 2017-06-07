@@ -29,7 +29,7 @@ a:hover::before {
 }
 
 a::before {
-	content: "";
+	content: '';
 	border-bottom: 1px dotted var(--linkColour);
 	position: absolute;
 	bottom: 0;
@@ -43,35 +43,4 @@ a::before {
 	border-radius: var(--corners);
 	max-width: 60rem;
 	margin: 0 auto;
-}
-
-.people-list {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-.person__item {
-	position: relative;
-	line-height: 2;
-}
-
-.person__item::before {
-	content: "•";
-	position: absolute;
-	left: -1rem;
-	transition: .2s ease;
-	opacity: 0;
-	transform: translateX(-.5rem);
-}
-
-.person__item:hover::before {
-	transform: none;
-	opacity: 1;
-}
-
-.person__name {
-	display: inline-block;
-	min-width: 10rem;
-	line-height: 1.6;
 }
