@@ -8,18 +8,41 @@ module.exports = {
 	cache: true,
 	context: srcPath,
 	entry: {
-		app: './app.js',
+		app: './app.js'
 	},
 	output: {
 		path: distPath,
 		filename: '[name].bundle.js',
-    },
+	},
 	resolve: {
 		modules: ["node_modules"],
 		alias: {
-			vue: 'vue/dist/vue.common.js',
-			'vue-router': 'vue-router/dist/vue-router.common.js'
+			'vue$': 'vue/dist/vue.esm.js',
+			'vue-router': 'vue-router/dist/vue-router.esm.js'
 		}
+	},
+	module: {
+	  rules: [
+		{
+		  test: /\.js$/,
+		  exclude: /(node_modules)/,
+		  use: {
+			loader: 'babel-loader',
+			options: {
+			  presets: ['es2015']
+			}
+		  }
+		},
+		{
+		  test: /\.vue$/,
+		  loader: 'vue-loader',
+		  options: {
+		    loaders: {
+		      scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
+		    }
+		  }
+		}
+	  ]
 	},
 	plugins: [
 		new webpack.EnvironmentPlugin({
