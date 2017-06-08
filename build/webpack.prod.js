@@ -1,5 +1,4 @@
-var path = require('path'), 
-	webpack = require('webpack'),
+var webpack = require('webpack'),
 	merge = require('webpack-merge'),
 	baseWebpackConfig = require('./webpack.base.js'),
 	FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');

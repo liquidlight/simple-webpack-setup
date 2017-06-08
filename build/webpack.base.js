@@ -1,7 +1,7 @@
 var webpack = require('webpack'),
-	path    = require('path');
+	path = require('path');
 
-var srcPath  = path.join(__dirname, '/../src/js'),
+var srcPath = path.join(__dirname, '/../src/js'),
 	distPath = path.join(__dirname, '/../dist/js');
 
 module.exports = {
@@ -12,37 +12,36 @@ module.exports = {
 	},
 	output: {
 		path: distPath,
-		filename: '[name].bundle.js',
+		filename: '[name].bundle.js'
 	},
 	resolve: {
-		modules: ["node_modules"],
+		modules: ['node_modules'],
 		alias: {
 			'vue$': 'vue/dist/vue.esm.js',
 			'vue-router': 'vue-router/dist/vue-router.esm.js'
 		}
 	},
 	module: {
-	  rules: [
-		{
-		  test: /\.js$/,
-		  exclude: /(node_modules)/,
-		  use: {
-			loader: 'babel-loader',
-			options: {
-			  presets: ['es2015']
+		rules: [{
+			test: /\.js$/,
+			exclude: /(node_modules)/,
+			use: {
+				loader: 'babel-loader',
+				options: {
+					presets: ['es2015']
+				}
 			}
-		  }
 		},
 		{
-		  test: /\.vue$/,
-		  loader: 'vue-loader',
-		  options: {
-		    loaders: {
-		      scss: 'vue-style-loader!css-loader!sass-loader',
-		    }
-		  }
+			test: /\.vue$/,
+			loader: 'vue-loader',
+			options: {
+				loaders: {
+					scss: 'vue-style-loader!css-loader!sass-loader'
+				}
+			}
 		}
-	  ]
+		]
 	},
 	plugins: [
 		new webpack.EnvironmentPlugin({
