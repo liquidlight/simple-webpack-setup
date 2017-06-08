@@ -40,8 +40,11 @@ module.exports = {
 					scss: 'vue-style-loader!css-loader!sass-loader'
 				}
 			}
-		}
-		]
+		},
+		{
+			test: /\.json$/,
+			use: 'json-loader'
+		}]
 	},
 	plugins: [
 		new webpack.EnvironmentPlugin({

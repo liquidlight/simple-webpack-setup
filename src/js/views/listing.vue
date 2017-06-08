@@ -1,15 +1,12 @@
 <template>
 	<transition name="slide-right" mode="out-in">
 		<div id="people-listing-template">
-			<transition name="fade" mode="out-in">
-
 			<ul class="people-list">
 				<li class="person__item" v-for="person in people">
 					<span class="person__name">{{ person.name }}</span>
 					<router-link :to="{ name: 'person', params: { id: person.guid }}" class="person__link">View Details ▸</router-link>
 				</li>
 			</ul>
-			</transition>
 		</div>
 	</transition>
 </template>
@@ -17,11 +14,7 @@
 <script>
 	export default {
 		name: 'people-listing-template',
-		data () {
-			return {
-				people: this.$parent.people
-			}
-		}
+		props: ['people']
 	}
 </script>
 

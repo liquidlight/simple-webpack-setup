@@ -55,7 +55,7 @@ a::before {
 	background: white;
 	border-radius: var(--corners);
 	box-sizing: border-box;
-	height: calc(100vh - var(--gutterLarge));
+	min-height: calc(100vh - var(--gutterLarge));
 	padding: var(--gutter);
 	position: absolute;
 	width: 100%;

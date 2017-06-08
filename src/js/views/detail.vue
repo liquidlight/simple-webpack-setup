@@ -20,18 +20,12 @@
 <script>
 export default {
 	name: 'people-detail-template',
+	props: ['people'],
 	data () {
-		var person;
-		for (var i = 0; i < this.$parent.people.length; i++) {
-			if(this.$parent.people[i].guid == this.$route.params.id) {
-				person = this.$parent.people[i];
-				break;
-			}
-		}
-
+		const route = this.$route;
 		return {
-			person: person
-		}
+			person: this.people.find(person => person.guid == route.params.id)
+		};
 	}
 }
 </script>
